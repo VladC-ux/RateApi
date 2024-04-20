@@ -1,4 +1,5 @@
 
+using Exchange.Service;
 using RateApi.Service;
 
 namespace RateApi
@@ -16,6 +17,7 @@ namespace RateApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<SampleData>();
+            builder.Services.AddSingleton<RateService>();   
             builder.Services.AddHostedService<BackGroundRefresh>();
 
             var app = builder.Build();
@@ -32,6 +34,15 @@ namespace RateApi
             app.UseAuthorization();
             
             app.MapGet("/masseges",(SampleData data)=>data.Data.Order());
+         
+
+            app.MapGet("/messages", async (RateService rateService) =>
+            {
+                var rates = rateService.ShowRates();
+              
+                return Results.Json(rates);
+            });
+
 
             app.MapControllers();
 

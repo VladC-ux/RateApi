@@ -1,6 +1,7 @@
 ﻿using Exchange.ApiModel;
 using Exchange.Data.Entity;
 using Exchange.Repository;
+using RateApi;
 
 namespace Exchange.Service.IServiceInterface
 {
@@ -16,6 +17,6 @@ namespace Exchange.Service.IServiceInterface
 
         RateApiModel GetById(int id);
 
-
+        List<Item> ShowRates();
     }
 }

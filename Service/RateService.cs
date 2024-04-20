@@ -2,6 +2,8 @@
 using Exchange.Data.Entity;
 using Exchange.Repository.IRepositoryInterface;
 using Exchange.Service.IServiceInterface;
+using RateApi;
+
 
 namespace Exchange.Service
 {
@@ -75,7 +77,21 @@ namespace Exchange.Service
             return reight;
         }
 
+        public List<Item> ShowRates()
+        {
+            List<Item> dataList = new List<Item>();
 
+            using (var httpClient = new HttpClient())
+            {
+                var root = httpClient.GetFromJsonAsync<Root>("https://www.inecobank.am/api/rates/").Result;
+                foreach (var item in root.items)
+                {
+                    dataList.Add(item);
+                }
+            }
+
+            return dataList;
+        }
 
 
     }

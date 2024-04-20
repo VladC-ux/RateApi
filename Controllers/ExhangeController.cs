@@ -94,5 +94,9 @@ namespace Exchange.Controller
             _rate.Delete(model);
             return Ok();
         }
+
+
+
+
     }
 }
