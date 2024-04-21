@@ -11,8 +11,8 @@ namespace Exchange.Controller
     public class ExchangeController : ControllerBase
     {
         private readonly IExchangeProvaidorService _exchange;
-        private readonly IRateService _rate;
 
+        private readonly IRateService _rate;
         public ExchangeController(IExchangeProvaidorService exchange, IRateService rate)
         {
             _exchange = exchange;
@@ -40,7 +40,6 @@ namespace Exchange.Controller
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
                 _exchange.Add(model);
@@ -59,7 +58,6 @@ namespace Exchange.Controller
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
                 _rate.Add(model);
@@ -90,13 +88,9 @@ namespace Exchange.Controller
             {
                 return BadRequest("Model is null");
             }
-
             _rate.Delete(model);
             return Ok();
         }
-
-
-
 
     }
 }

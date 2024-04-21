@@ -24,7 +24,6 @@ namespace Exchange.Service
             };
             _exchange.Add(change);
         }
-
         public void Delete(ExchangeProvaidorApiModel model)
         {
             _exchange.Delete(model.Id);

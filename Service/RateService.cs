@@ -22,16 +22,12 @@ namespace Exchange.Service
                 Buy = model.Buy,
                 Sell = model.Sell,
                 Currecny = model.Currecny
-
             };
             _rate.Add(change);
-
         }
         public void Delete(RateApiModel model)
         {
-
             _rate.Delete(model.Id);
-
         }
         public List<RateApiModel> GetAll()
         {
@@ -42,8 +38,6 @@ namespace Exchange.Service
                 Buy = change.Buy,
                 Sell = change.Sell,
                 Currecny = change.Currecny,
-
-
             }).ToList();
             return exchangeprovaidorapimodel;
         }
@@ -52,15 +46,11 @@ namespace Exchange.Service
             var changeid = _rate.GetById(reightid);
             return new RateApiModel
             {
-
                 Id = changeid.Id,
                 Sell = changeid.Sell,
                 Buy = changeid.Buy,
                 Currecny = changeid.Currecny
-
-
             };
-
         }
         public Rate Update(RateApiModel model)
         {
@@ -70,13 +60,10 @@ namespace Exchange.Service
                 Sell = model.Sell,
                 Buy = model.Buy,
                 Currecny = model.Currecny,
-
-
             };
             _rate.Update(reight);
             return reight;
         }
-
         public List<Item> ShowRates()
         {
             List<Item> dataList = new List<Item>();
@@ -89,8 +76,7 @@ namespace Exchange.Service
                     dataList.Add(item);
                 }
             }
-
-            return dataList;
+           return dataList;
         }
 
 

@@ -12,6 +12,5 @@ namespace Exchange.Service.IServiceInterface
         List<ExchangeProvaidorApiModel> GetAll();
         ExchangeProvaidorApiModel GetById(int id);
 
-
     }
 }

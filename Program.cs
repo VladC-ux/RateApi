@@ -13,30 +13,22 @@ namespace RateApi
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
+            var builder = WebApplication.CreateBuilder(args);      
 
             builder.Services.AddDbContext<ExchangeDBContext>(options =>
                  options.UseNpgsql(builder.Configuration.GetConnectionString("ExDatabase")));
 
-
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
-
             builder.Services.AddHostedService<BackGroundRefreshService>();
             builder.Services.AddScoped<IExchangeProvaidorRepository, ExchangeProvaidorRepository>();
             builder.Services.AddScoped<IRateRepository, RateRepository>();
             builder.Services.AddScoped<IExchangeProvaidorService, ExchangeProvaidorService>();
             builder.Services.AddScoped<IRateService, RateService>();
-            
-
 
             var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
+         
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -47,8 +39,6 @@ namespace RateApi
 
             app.UseAuthorization();
         
-
-
             app.MapControllers();
 
             app.Run();

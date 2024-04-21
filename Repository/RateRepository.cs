@@ -29,7 +29,6 @@ namespace Exchange.Repository
             _context.SaveChanges();
             return entity;
         }
-
         public void Delete(int id)
         {
             var querry = _context.ExchangeProvaidors.Find(id);
@@ -38,12 +37,10 @@ namespace Exchange.Repository
                 _context.ExchangeProvaidors.Remove(querry);
             }
         }
-
         public List<Rate> GetAll()
         {
             return _context.Rates.ToList();
         }
-
         public Rate GetById(int id)
         {
             return _context.Rates.FirstOrDefault(r => r.Id == id);
