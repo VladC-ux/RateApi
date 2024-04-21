@@ -1,57 +1,73 @@
 ﻿using Exchange.Data.Entity;
 using Exchange.Data;
 using Exchange.Repository.IRepositoryInterface;
+using RateApi;
 
 namespace Exchange.Repository
 {
-    public class RateRepository : IReightRepository
+    public class RateRepository : IRateRepository
     {
-        private readonly DBContextExchange _context;
-
-
-        public RateRepository(DBContextExchange context)
+        private readonly ExchangeDBContext _context;
+        public RateRepository(ExchangeDBContext context)
         {
             _context = context;
         }
         public void Add(Rate reight)
         {
-            _context.Reights.Add(reight);
+            _context.Rates.Add(reight);
             _context.SaveChanges();
 
         }
-
         public Rate Update(Rate reight)
         {
 
-            var entity = _context.Reights.FirstOrDefault(p => p.Id == reight.Id);
+            var entity = _context.Rates.FirstOrDefault(p => p.Id == reight.Id);
             entity.Sell = reight.Sell;
             entity.Buy = reight.Buy;
             entity.Currecny = reight.Currecny;
-            _context.Reights.Update(entity);
+            _context.Rates.Update(entity);
             _context.SaveChanges();
             return entity;
         }
 
         public void Delete(int id)
         {
-            var querry = _context.ExchangeProvadiors.Find(id);
+            var querry = _context.ExchangeProvaidors.Find(id);
             if (querry != null)
             {
-                _context.ExchangeProvadiors.Remove(querry);
+                _context.ExchangeProvaidors.Remove(querry);
             }
-
         }
-
-
 
         public List<Rate> GetAll()
         {
-            return _context.Reights.ToList();
+            return _context.Rates.ToList();
         }
 
         public Rate GetById(int id)
         {
-            return _context.Reights.FirstOrDefault(r => r.Id == id);
+            return _context.Rates.FirstOrDefault(r => r.Id == id);
         }
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

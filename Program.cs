@@ -1,5 +1,10 @@
 
+using Exchange.Data;
+using Exchange.Repository;
+using Exchange.Repository.IRepositoryInterface;
 using Exchange.Service;
+using Exchange.Service.IServiceInterface;
+using Microsoft.EntityFrameworkCore;
 using RateApi.Service;
 
 namespace RateApi
@@ -12,13 +17,22 @@ namespace RateApi
 
             // Add services to the container.
 
+            builder.Services.AddDbContext<ExchangeDBContext>(options =>
+                 options.UseNpgsql(builder.Configuration.GetConnectionString("ExDatabase")));
+
+
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddSingleton<SampleData>();
-            builder.Services.AddSingleton<RateService>();   
-            builder.Services.AddHostedService<BackGroundRefresh>();
+
+
+            builder.Services.AddHostedService<BackGroundRefreshService>();
+            builder.Services.AddScoped<IExchangeProvaidorRepository, ExchangeProvaidorRepository>();
+            builder.Services.AddScoped<IRateRepository, RateRepository>();
+            builder.Services.AddScoped<IExchangeProvaidorService, ExchangeProvaidorService>();
+            builder.Services.AddScoped<IRateService, RateService>();
+            
+
 
             var app = builder.Build();
 
@@ -32,16 +46,7 @@ namespace RateApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            
-            app.MapGet("/masseges",(SampleData data)=>data.Data.Order());
-         
-
-            app.MapGet("/messages", async (RateService rateService) =>
-            {
-                var rates = rateService.ShowRates();
-              
-                return Results.Json(rates);
-            });
+        
 
 
             app.MapControllers();

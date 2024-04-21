@@ -9,8 +9,8 @@ namespace Exchange.Service
 {
     public class RateService : IRateService
     {
-        private readonly IReightRepository _rate;
-        public RateService(IReightRepository reight)
+        private readonly IRateRepository _rate;
+        public RateService(IRateRepository reight)
         {
             _rate = reight;
 

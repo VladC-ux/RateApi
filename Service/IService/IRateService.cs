@@ -8,15 +8,10 @@ namespace Exchange.Service.IServiceInterface
     public interface IRateService
     {
         void Add(RateApiModel exchange);
-
         Rate Update(RateApiModel exchange);
-
         void Delete(RateApiModel id);
-
         List<RateApiModel> GetAll();
-
         RateApiModel GetById(int id);
-
         List<Item> ShowRates();
     }
 }

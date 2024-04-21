@@ -1,6 +1,6 @@
 ﻿namespace Exchange
 {
-    public enum Type
+    public enum ЕxchangeType
     {
         Bank = 1,
         ExchangeOffice = 2,

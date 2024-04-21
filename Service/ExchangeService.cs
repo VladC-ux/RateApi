@@ -13,7 +13,6 @@ namespace Exchange.Service
         public ExchangeProvaidorService(IExchangeProvaidorRepository exchange)
         {
             _exchange = exchange;
-
         }
         public void Add(ExchangeProvaidorApiModel model)
         {
@@ -25,14 +24,11 @@ namespace Exchange.Service
             };
             _exchange.Add(change);
         }
+
         public void Delete(ExchangeProvaidorApiModel model)
         {
-
             _exchange.Delete(model.Id);
-
         }
-
-
         public List<ExchangeProvaidorApiModel> GetAll()
         {
             var data = _exchange.GetAll();
@@ -42,7 +38,6 @@ namespace Exchange.Service
                 Name = change.Name,
                 Types = change.Types,
 
-
             }).ToList();
             return changeapimodels;
         }
@@ -51,13 +46,11 @@ namespace Exchange.Service
             var exchange = _exchange.GetById(exchangeid);
             return new ExchangeProvaidorApiModel
             {
-
                 Id = exchange.Id,
                 Name = exchange.Name,
                 Types = exchange.Types,
                 Update = exchange.Update
             };
-
         }
         public ExchangeProvaidor Update(ExchangeProvaidorApiModel exchange)
         {
@@ -67,13 +60,9 @@ namespace Exchange.Service
                 Name = exchange.Name,
                 Types = exchange.Types,
                 Update = exchange.Update,
-
-
             };
             _exchange.Update(change);
             return change;
-        }
-
-     
+        }    
     }
 }

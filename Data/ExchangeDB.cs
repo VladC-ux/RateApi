@@ -1,22 +1,21 @@
 ﻿using Exchange.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace Exchange.Data
 {
-    public class DBContextExchange : DbContext
+    public class ExchangeDBContext : DbContext
     {
-        public DBContextExchange(DbContextOptions<DBContextExchange> options) : base(options)
+        public ExchangeDBContext(DbContextOptions<ExchangeDBContext> options) :
+            base(options)
         {
-
         }
 
-        public DbSet<ExchangeProvaidor> ExchangeProvadiors { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.UseSerialColumns();
+        }
 
-        public DbSet<Rate> Reights { get; set; }
-
-
-
-
+        public DbSet<ExchangeProvaidor> ExchangeProvaidors { get; set; }
+        public DbSet<Rate> Rates { get; set; }
     }
 }

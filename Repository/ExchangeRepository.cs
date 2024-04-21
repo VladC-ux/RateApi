@@ -6,60 +6,44 @@ namespace Exchange.Repository
 {
     public class ExchangeProvaidorRepository:IExchangeProvaidorRepository
     {
-        private readonly DBContextExchange _context;
-
-
-        public ExchangeProvaidorRepository (DBContextExchange context)
+        private readonly ExchangeDBContext _context;
+        public ExchangeProvaidorRepository (ExchangeDBContext context)
         {
             _context = context;
         }
         public void Add(ExchangeProvaidor exchange )
         {
-            _context.ExchangeProvadiors.Add(exchange );
+            _context.ExchangeProvaidors.Add(exchange );
             _context.SaveChanges();
         }
-
         public ExchangeProvaidor Update(ExchangeProvaidor exchange )
         {
-
-            var entity = _context.ExchangeProvadiors.FirstOrDefault(p => p.Id == exchange.Id);
+            var entity = _context.ExchangeProvaidors.FirstOrDefault(p => p.Id == exchange.Id);
 
             entity.Name = exchange.Name;
             entity.Types = exchange.Types;
             entity.Update = exchange.Update;
-            _context.ExchangeProvadiors.Update(entity);
+            _context.ExchangeProvaidors.Update(entity);
             _context.SaveChanges();
             return entity;
-
-           
-
         }
-
         public void Delete(int id)
         {
-            var querry = _context.ExchangeProvadiors.Find(id);
+            var querry = _context.ExchangeProvaidors.Find(id);
             if (querry != null)
             {
-                _context.ExchangeProvadiors.Remove(querry);
+                _context.ExchangeProvaidors.Remove(querry);
             }
             _context.SaveChanges();
         }
-
         public List<ExchangeProvaidor> GetAll()
         {
-            return _context.ExchangeProvadiors.ToList();
+            return _context.ExchangeProvaidors.ToList();
         }
-
         public ExchangeProvaidor GetById(int id)
         {
-            return _context.ExchangeProvadiors.FirstOrDefault(e => e.Id == id);
+            return _context.ExchangeProvaidors.FirstOrDefault(e => e.Id == id);
         }
-
-
-
-
-
-
 
     }
 }

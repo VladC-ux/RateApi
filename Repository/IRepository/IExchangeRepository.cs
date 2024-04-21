@@ -6,18 +6,10 @@ namespace Exchange.Repository.IRepositoryInterface
     {
 
         void Add(ExchangeProvaidor exchange);
-
         ExchangeProvaidor Update(ExchangeProvaidor exchange);
-
         void Delete(int id);
-
         List<ExchangeProvaidor> GetAll();
-
         ExchangeProvaidor GetById(int id);
-
-
-
-
 
     }
 }
