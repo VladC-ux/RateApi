@@ -4,7 +4,6 @@ namespace Exchange.Repository.IRepositoryInterface
 {
     public interface IExchangeProvaidorRepository
     {
-
         void Add(ExchangeProvaidor exchange);
         ExchangeProvaidor Update(ExchangeProvaidor exchange);
         void Delete(int id);

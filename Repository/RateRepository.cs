@@ -47,7 +47,26 @@ namespace Exchange.Repository
         }
 
 
-        
+        public void ConvertAndSave(Root root)
+        {
+            DateTime currentDateTime = DateTime.Now; 
+
+            foreach (var item in root.items)
+            {
+                Rate rate = new Rate
+                {
+                    Currecny = item.code,
+                    Buy = (double)item.online.buy,
+                    Sell = (double)item.online.sell,
+                    SyncDate = currentDateTime 
+                };
+
+                _context.Rates.Add(rate);
+            }
+
+            _context.SaveChanges();
+        }
+
 
 
 

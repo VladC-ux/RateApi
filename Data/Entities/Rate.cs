@@ -3,9 +3,10 @@
     public class Rate
     {
         public int Id { get; set; }
-        public decimal Currecny { get; set; }
-        public decimal Buy { get; set; }
-        public decimal Sell { get; set; }
+        public string Currecny { get; set; }
+        public double Buy { get; set; }
+        public double Sell { get; set; }
+        public DateTime SyncDate { get; set; }
         public int ExchangeProvaidorId { get; set; }
         public ExchangeProvaidor ExchangeProvaidor { get; set; }
     }

@@ -10,7 +10,7 @@ namespace Exchange.Repository.IRepositoryInterface
         void Delete(int id);
         List<Rate> GetAll();
         Rate GetById(int id);
-        
+        void ConvertAndSave(Root root);
     }
 
 }
