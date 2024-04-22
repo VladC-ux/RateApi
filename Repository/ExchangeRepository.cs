@@ -1,6 +1,6 @@
 ﻿using Exchange.Data;
 using Exchange.Data.Entity;
-using Exchange.Repository.IRepositoryInterface;
+using RateApi.Contracts.IRepository;
 
 namespace Exchange.Repository
 {

@@ -1,7 +1,7 @@
-﻿using Exchange.ApiModel;
-using Exchange.Service;
-using Exchange.Service.IServiceInterface;
+﻿using Exchange.Service;
 using Microsoft.AspNetCore.Mvc;
+using RateApi.Contracts.ApiModel;
+using RateApi.Contracts.IService;
 using System;
 
 namespace Exchange.Controller

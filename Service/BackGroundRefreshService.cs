@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Exchange.Service;
-using Exchange.Service.IServiceInterface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using RateApi.Contracts.IService;
 
 namespace RateApi.Service
 {

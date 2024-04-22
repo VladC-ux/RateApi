@@ -1,9 +1,9 @@
-﻿using Exchange.ApiModel;
-using Exchange.Data.Entity;
+﻿using Exchange.Data.Entity;
 using Exchange.Repository;
 using RateApi;
+using RateApi.Contracts.ApiModel;
 
-namespace Exchange.Service.IServiceInterface
+namespace RateApi.Contracts.IService
 {
     public interface IRateService
     {

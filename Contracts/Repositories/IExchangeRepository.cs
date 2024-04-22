@@ -1,6 +1,6 @@
 ﻿using Exchange.Data.Entity;
 
-namespace Exchange.Repository.IRepositoryInterface
+namespace RateApi.Contracts.IRepository
 {
     public interface IExchangeProvaidorRepository
     {

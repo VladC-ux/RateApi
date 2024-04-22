@@ -1,9 +1,8 @@
-﻿
-using Exchange.ApiModel;
-using Exchange.Data.Entity;
+﻿using Exchange.Data.Entity;
 using Exchange.Repository;
-using Exchange.Repository.IRepositoryInterface;
-using Exchange.Service.IServiceInterface;
+using RateApi.Contracts.ApiModel;
+using RateApi.Contracts.IRepository;
+using RateApi.Contracts.IService;
 
 namespace Exchange.Service
 {

@@ -1,10 +1,10 @@
 
 using Exchange.Data;
 using Exchange.Repository;
-using Exchange.Repository.IRepositoryInterface;
 using Exchange.Service;
-using Exchange.Service.IServiceInterface;
 using Microsoft.EntityFrameworkCore;
+using RateApi.Contracts.IRepository;
+using RateApi.Contracts.IService;
 using RateApi.Service;
 
 namespace RateApi

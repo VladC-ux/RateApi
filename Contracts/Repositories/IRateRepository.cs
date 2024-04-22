@@ -1,7 +1,7 @@
 ﻿using Exchange.Data.Entity;
 using RateApi;
 
-namespace Exchange.Repository.IRepositoryInterface
+namespace RateApi.Contracts.IRepository
 {
     public interface IRateRepository
     {

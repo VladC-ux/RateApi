@@ -1,4 +1,6 @@
-﻿namespace Exchange.ApiModel
+﻿using Exchange;
+
+namespace RateApi.Contracts.ApiModel
 {
     public class ExchangeProvaidorApiModel
     {
