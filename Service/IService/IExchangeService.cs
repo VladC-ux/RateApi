@@ -11,6 +11,5 @@ namespace Exchange.Service.IServiceInterface
         void Delete(ExchangeProvaidorApiModel id);
         List<ExchangeProvaidorApiModel> GetAll();
         ExchangeProvaidorApiModel GetById(int id);
-
     }
 }

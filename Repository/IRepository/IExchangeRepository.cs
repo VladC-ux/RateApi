@@ -9,6 +9,5 @@ namespace Exchange.Repository.IRepositoryInterface
         void Delete(int id);
         List<ExchangeProvaidor> GetAll();
         ExchangeProvaidor GetById(int id);
-
     }
 }

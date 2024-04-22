@@ -21,7 +21,7 @@ namespace Exchange.Repository
             var entity = _context.ExchangeProvaidors.FirstOrDefault(p => p.Id == exchange.Id);
 
             entity.Name = exchange.Name;
-            entity.Types = exchange.Types;
+            entity.Type = exchange.Type;
             entity.Update = exchange.Update;
             _context.ExchangeProvaidors.Update(entity);
             _context.SaveChanges();

@@ -19,7 +19,7 @@ namespace Exchange.Service
             ExchangeProvaidor change = new ExchangeProvaidor
             {
                 Name = model.Name,
-                Types = model.Types,
+                Type = model.Type,
                 Update = model.Update,
             };
             _exchange.Add(change);
@@ -35,7 +35,7 @@ namespace Exchange.Service
             {
                 Id = change.Id,
                 Name = change.Name,
-                Types = change.Types,
+                Type = change.Type,
 
             }).ToList();
             return changeapimodels;
@@ -47,7 +47,7 @@ namespace Exchange.Service
             {
                 Id = exchange.Id,
                 Name = exchange.Name,
-                Types = exchange.Types,
+                Type = exchange.Type,
                 Update = exchange.Update
             };
         }
@@ -57,7 +57,7 @@ namespace Exchange.Service
             {
                 Id = exchange.Id,
                 Name = exchange.Name,
-                Types = exchange.Types,
+                Type = exchange.Type,
                 Update = exchange.Update,
             };
             _exchange.Update(change);
