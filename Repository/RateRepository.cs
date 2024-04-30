@@ -31,10 +31,10 @@ namespace Exchange.Repository
         }
         public void Delete(int id)
         {
-            var querry = _context.ExchangeProvaidors.Find(id);
+            var querry = _context.ExchangeProvidors.Find(id);
             if (querry != null)
             {
-                _context.ExchangeProvaidors.Remove(querry);
+                _context.ExchangeProvidors.Remove(querry);
             }
         }
         public List<Rate> GetAll()

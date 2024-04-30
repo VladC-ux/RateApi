@@ -7,7 +7,7 @@
         public double Buy { get; set; }
         public double Sell { get; set; }
         public DateTime SyncDate { get; set; }
-        public int ExchangeProvaidorId { get; set; }
-        public ExchangeProvaidor ExchangeProvaidor { get; set; }
+        public int ExchangeProvidorId { get; set; }
+        public ExchangeProvidor ExchangeProvidor { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace Exchange.Controller
         }
 
         [HttpPost("add-exchange")]
-        public IActionResult AddExchange([FromBody] ExchangeProvaidorApiModel model)
+        public IActionResult AddExchange([FromBody] ExchangeProvidorApiModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace Exchange.Controller
         }
 
         [HttpDelete("delete-exchange")]
-        public IActionResult DeleteExchange([FromBody] ExchangeProvaidorApiModel model)
+        public IActionResult DeleteExchange([FromBody] ExchangeProvidorApiModel model)
         {
             if (model == null)
             {

@@ -1,6 +1,6 @@
 ﻿namespace Exchange.Data.Entity
 {
-    public class ExchangeProvaidor
+    public class ExchangeProvidor
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -15,7 +15,7 @@ namespace Exchange.Data
             modelBuilder.UseSerialColumns();
         }
 
-        public DbSet<ExchangeProvaidor> ExchangeProvaidors { get; set; }
+        public DbSet<ExchangeProvidor> ExchangeProvidors { get; set; }
         public DbSet<Rate> Rates { get; set; }
     }
 }

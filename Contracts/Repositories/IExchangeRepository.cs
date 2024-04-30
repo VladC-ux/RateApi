@@ -4,10 +4,10 @@ namespace RateApi.Contracts.IRepository
 {
     public interface IExchangeProvaidorRepository
     {
-        void Add(ExchangeProvaidor exchange);
-        ExchangeProvaidor Update(ExchangeProvaidor exchange);
+        void Add(ExchangeProvidor exchange);
+        ExchangeProvidor Update(ExchangeProvidor exchange);
         void Delete(int id);
-        List<ExchangeProvaidor> GetAll();
-        ExchangeProvaidor GetById(int id);
+        List<ExchangeProvidor> GetAll();
+        ExchangeProvidor GetById(int id);
     }
 }

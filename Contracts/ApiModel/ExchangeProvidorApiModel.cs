@@ -2,7 +2,7 @@
 
 namespace RateApi.Contracts.ApiModel
 {
-    public class ExchangeProvaidorApiModel
+    public class ExchangeProvidorApiModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

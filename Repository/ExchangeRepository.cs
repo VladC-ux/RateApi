@@ -11,38 +11,38 @@ namespace Exchange.Repository
         {
             _context = context;
         }
-        public void Add(ExchangeProvaidor exchange )
+        public void Add(ExchangeProvidor exchange )
         {
-            _context.ExchangeProvaidors.Add(exchange );
+            _context.ExchangeProvidors.Add(exchange );
             _context.SaveChanges();
         }
-        public ExchangeProvaidor Update(ExchangeProvaidor exchange )
+        public ExchangeProvidor Update(ExchangeProvidor exchange )
         {
-            var entity = _context.ExchangeProvaidors.FirstOrDefault(p => p.Id == exchange.Id);
+            var entity = _context.ExchangeProvidors.FirstOrDefault(p => p.Id == exchange.Id);
 
             entity.Name = exchange.Name;
             entity.Type = exchange.Type;
             entity.Update = exchange.Update;
-            _context.ExchangeProvaidors.Update(entity);
+            _context.ExchangeProvidors.Update(entity);
             _context.SaveChanges();
             return entity;
         }
         public void Delete(int id)
         {
-            var querry = _context.ExchangeProvaidors.Find(id);
+            var querry = _context.ExchangeProvidors.Find(id);
             if (querry != null)
             {
-                _context.ExchangeProvaidors.Remove(querry);
+                _context.ExchangeProvidors.Remove(querry);
             }
             _context.SaveChanges();
         }
-        public List<ExchangeProvaidor> GetAll()
+        public List<ExchangeProvidor> GetAll()
         {
-            return _context.ExchangeProvaidors.ToList();
+            return _context.ExchangeProvidors.ToList();
         }
-        public ExchangeProvaidor GetById(int id)
+        public ExchangeProvidor GetById(int id)
         {
-            return _context.ExchangeProvaidors.FirstOrDefault(e => e.Id == id);
+            return _context.ExchangeProvidors.FirstOrDefault(e => e.Id == id);
         }
 
     }

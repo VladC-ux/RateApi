@@ -13,9 +13,9 @@ namespace Exchange.Service
         {
             _exchange = exchange;
         }
-        public void Add(ExchangeProvaidorApiModel model)
+        public void Add(ExchangeProvidorApiModel model)
         {
-            ExchangeProvaidor change = new ExchangeProvaidor
+            ExchangeProvidor change = new ExchangeProvidor
             {
                 Name = model.Name,
                 Type = model.Type,
@@ -23,14 +23,14 @@ namespace Exchange.Service
             };
             _exchange.Add(change);
         }
-        public void Delete(ExchangeProvaidorApiModel model)
+        public void Delete(ExchangeProvidorApiModel model)
         {
             _exchange.Delete(model.Id);
         }
-        public List<ExchangeProvaidorApiModel> GetAll()
+        public List<ExchangeProvidorApiModel> GetAll()
         {
             var data = _exchange.GetAll();
-            List<ExchangeProvaidorApiModel> changeapimodels = data.Select(change => new ExchangeProvaidorApiModel
+            List<ExchangeProvidorApiModel> changeapimodels = data.Select(change => new ExchangeProvidorApiModel
             {
                 Id = change.Id,
                 Name = change.Name,
@@ -39,10 +39,10 @@ namespace Exchange.Service
             }).ToList();
             return changeapimodels;
         }
-        public ExchangeProvaidorApiModel GetById(int exchangeid)
+        public ExchangeProvidorApiModel GetById(int exchangeid)
         {
             var exchange = _exchange.GetById(exchangeid);
-            return new ExchangeProvaidorApiModel
+            return new ExchangeProvidorApiModel
             {
                 Id = exchange.Id,
                 Name = exchange.Name,
@@ -50,9 +50,9 @@ namespace Exchange.Service
                 Update = exchange.Update
             };
         }
-        public ExchangeProvaidor Update(ExchangeProvaidorApiModel exchange)
+        public ExchangeProvidor Update(ExchangeProvidorApiModel exchange)
         {
-            ExchangeProvaidor change = new ExchangeProvaidor
+            ExchangeProvidor change = new ExchangeProvidor
             {
                 Id = exchange.Id,
                 Name = exchange.Name,
